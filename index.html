@@ -2,14 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Andreas</title>
-  <style>
-    body { margin: 32px; background: #fff; color: #111; font-family: system-ui, sans-serif; }
-    h1 { margin: 0; font-size: 32px; font-weight: 500; }
-  </style>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#181315">
+  <link rel="icon" href="data:,">
+  <link rel="preload" href="assets/fonts/instrument-serif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="art.js" defer></script>
+  <title>Merovech Capital</title>
 </head>
 <body>
-  <h1>Andreas</h1>
+  <canvas id="pixel-field" aria-hidden="true"></canvas>
+  <canvas id="text-field" aria-hidden="true"></canvas>
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Merovech Capital</h1>
+        <div class="hero__copy">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel sem at sapien feugiat posuere. Morbi vitae ligula non justo feugiat tincidunt.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porttitor, nibh quis facilisis consequat, augue elit tristique sapien, vitae malesuada lectus erat sed justo.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo vitae cursus varius, erat neque tincidunt magna, vel posuere nisl sapien non erat.</p>
+        </div>
+      </div>
+    </section>
+    <div class="effect-copy effect-copy--second">
+      <h2 class="effect-copy__side-title">Lorem Ipsum</h2>
+      <p class="effect-copy__side-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sem vel arcu posuere dignissim. Aenean feugiat libero sed fermentum varius, neque sapien volutpat erat, vitae malesuada justo lorem non nibh. Curabitur euismod metus at ipsum faucibus, a dictum velit volutpat. Sed euismod justo vitae cursus varius, erat neque tincidunt magna, vel posuere nisl sapien non erat. Donec finibus libero sed mi imperdiet, at ultrices purus viverra. Morbi vitae ligula non justo feugiat tincidunt.</p>
+    </div>
+    <div class="effect-copy effect-copy--third">
+      <p class="effect-copy__lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae ligula non justo feugiat tincidunt. Praesent dignissim arcu erat eleifend libero, vitae fermentum neque lorem in est.</p>
+    </div>
+    <div class="runway" aria-hidden="true"></div>
+  </main>
 </body>
 </html>

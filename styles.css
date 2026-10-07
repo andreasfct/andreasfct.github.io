@@ -1,0 +1,249 @@
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("assets/fonts/instrument-serif-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("assets/fonts/manrope-latin.woff2") format("woff2");
+}
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  --ink: #181315;
+  --bone: #f6eee8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ink);
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  min-width: 20rem;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--bone);
+  background: var(--ink);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  position: fixed;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(to right, rgba(130, 102, 111, .022) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(130, 102, 111, .022) 1px, transparent 1px);
+  background-size: clamp(1.5rem, 2.5vw, 2rem) clamp(1.5rem, 2.5vw, 2rem);
+}
+
+#pixel-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  pointer-events: none;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+#text-field {
+  position: fixed;
+  z-index: 3;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  pointer-events: none;
+}
+
+main {
+  position: relative;
+  z-index: 4;
+  min-height: 1200svh;
+}
+
+.hero {
+  height: 125svh;
+  padding-inline: clamp(1.5rem, 4.5vw, 5.5rem);
+}
+
+.hero__content {
+  position: fixed;
+  top: 0;
+  right: clamp(1.5rem, 4.5vw, 5.5rem);
+  left: clamp(1.5rem, 4.5vw, 5.5rem);
+  height: 100svh;
+  padding-top: clamp(3.75rem, 8svh, 6.5rem);
+}
+
+h1 {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  margin: 0;
+  color: var(--bone);
+  font-family: "Instrument Serif", "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(5.5rem, 12vw, 13rem);
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: -.057em;
+  white-space: nowrap;
+}
+
+.hero__copy {
+  width: min(38ch, 100%);
+  margin: clamp(2rem, 4.3svh, 3.5rem) 4vw 0 auto;
+  color: var(--bone);
+  font-size: clamp(.92rem, 1.05vw, 1.06rem);
+  font-weight: 380;
+  line-height: 1.72;
+  letter-spacing: -.018em;
+  text-wrap: pretty;
+}
+
+p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 1.3em;
+}
+
+.effect-copy--second {
+  position: fixed;
+  inset: 0;
+  color: var(--ink);
+}
+
+.effect-copy__side-title {
+  margin: 0;
+  font-family: "Instrument Serif", "Bodoni 72", Didot, Georgia, serif;
+  font-size: 6.25rem;
+  font-weight: 400;
+  line-height: .78;
+  letter-spacing: -.055em;
+  white-space: nowrap;
+}
+
+.effect-copy__side-body {
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(.85rem, 1.05vw, 1.02rem);
+  font-weight: 380;
+  line-height: 1.55;
+  letter-spacing: -.018em;
+}
+
+.effect-copy--third {
+  position: fixed;
+  bottom: clamp(2rem, 9svh, 6rem);
+  left: clamp(1.5rem, 7vw, 8rem);
+  width: min(36rem, calc(100% - 3rem));
+  color: var(--ink);
+  font-size: clamp(.95rem, 1.1vw, 1.08rem);
+  font-weight: 380;
+  line-height: 1.66;
+  letter-spacing: -.018em;
+  text-wrap: pretty;
+}
+
+.effect-copy__lead {
+  max-width: 9ch;
+  font-family: "Instrument Serif", "Bodoni 72", Didot, Georgia, serif;
+  font-size: clamp(3.5rem, 7.5vw, 7.5rem);
+  font-weight: 400;
+  line-height: .82;
+  letter-spacing: -.055em;
+}
+
+.hero__content,
+.effect-copy--second,
+.effect-copy--third {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.runway {
+  min-height: 1075svh;
+}
+
+::selection {
+  color: var(--ink);
+  background: var(--bone);
+}
+
+@media (max-width: 42rem) {
+  .hero {
+    padding-inline: 1.5rem;
+  }
+
+  .hero__content {
+    right: 1.5rem;
+    left: 1.5rem;
+    padding-top: clamp(3.25rem, 6svh, 4.5rem);
+  }
+
+  h1 {
+    width: auto;
+    max-width: 7.1ch;
+    font-size: clamp(4.7rem, 20vw, 6.6rem);
+    line-height: .79;
+    white-space: normal;
+  }
+
+  .hero__copy {
+    width: min(32ch, 100%);
+    margin-top: 3.5rem;
+    margin-right: 0;
+  }
+
+  .effect-copy--second {
+    inset: 0;
+  }
+
+  .effect-copy__side-body {
+    font-size: clamp(.8rem, 3.5vw, .95rem);
+  }
+
+  .effect-copy--third {
+    bottom: 2.25rem;
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+  }
+
+  .effect-copy__lead {
+    font-size: clamp(3.25rem, 16vw, 5.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
